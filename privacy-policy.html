@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Hover Quick Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:     #22C55E;
+      --green-dark:#16A34A;
+      --green-bg:  #F0FDF4;
+      --green-dim: #BBF7D0;
+      --ink:       #0F172A;
+      --muted:     #64748B;
+      --border:    #E2E8F0;
+      --bg:        #F8FAFC;
+      --card:      #FFFFFF;
+      --radius:    16px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(248,250,252,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: var(--ink);
+    }
+    .logo-mark {
+      width: 32px; height: 32px;
+      background: var(--green);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-mark svg { width: 16px; height: 16px; }
+    .logo-name { font-size: 14px; font-weight: 700; }
+    .nav-back {
+      font-size: 13px; font-weight: 600;
+      color: var(--muted); text-decoration: none;
+      display: flex; align-items: center; gap: 5px;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--green-dark); }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--green-bg);
+      border-bottom: 1px solid var(--green-dim);
+      padding: 64px 32px 56px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--card);
+      border: 1.5px solid var(--green-dim);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 12px; font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 24px;
+    }
+    .hero-badge span {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+    .hero h1 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .hero p {
+      font-size: 16px; color: var(--muted);
+      max-width: 480px; margin: 0 auto;
+    }
+    .hero-meta {
+      display: flex; justify-content: center; gap: 24px;
+      margin-top: 28px; flex-wrap: wrap;
+    }
+    .meta-item {
+      font-size: 12px; color: var(--muted);
+      display: flex; align-items: center; gap: 5px;
+    }
+    .meta-item strong { color: var(--ink); font-weight: 600; }
+
+    /* ── Layout ── */
+    .page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 64px 32px 96px;
+    }
+
+    /* ── TL;DR summary card ── */
+    .summary-card {
+      background: var(--green-bg);
+      border: 1.5px solid var(--green-dim);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+    .summary-card h2 {
+      font-size: 14px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: var(--green-dark); margin-bottom: 16px;
+    }
+    .summary-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .summary-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 15px; color: var(--ink); font-weight: 500;
+    }
+    .summary-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      margin-top: 1px;
+      background: var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l3 3 5-6' stroke='white' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 10px no-repeat;
+    }
+
+    /* ── Section ── */
+    .section { margin-bottom: 48px; }
+    .section-label {
+      display: inline-block;
+      font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em;
+      color: var(--green-dark);
+      background: var(--green-bg);
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+    }
+    .section h2 {
+      font-size: 22px; font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+    .section p {
+      font-size: 15px; color: var(--muted);
+      line-height: 1.75; margin-bottom: 12px;
+    }
+    .section p:last-child { margin-bottom: 0; }
+    .section p strong { color: var(--ink); font-weight: 600; }
+
+    .divider { height: 1px; background: var(--border); margin: 48px 0; }
+
+    /* ── Info card ── */
+    .info-card {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-top: 16px;
+    }
+    .info-row {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .info-icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      border-radius: 10px;
+      background: var(--green-bg);
+      border: 1px solid var(--green-dim);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .info-row-content h4 {
+      font-size: 14px; font-weight: 700;
+      color: var(--ink); margin-bottom: 3px;
+    }
+    .info-row-content p {
+      font-size: 13px; color: var(--muted);
+      line-height: 1.55; margin: 0;
+    }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-left: 4px solid var(--green);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 18px 24px;
+      margin-top: 16px;
+      font-size: 15px; color: var(--ink);
+      line-height: 1.65;
+    }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      margin-top: 16px;
+    }
+    .contact-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .contact-card p  { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+    .contact-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--green);
+      color: #fff;
+      font-size: 14px; font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity .2s, transform .2s;
+    }
+    .contact-btn:hover { opacity: .88; transform: translateY(-1px); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px;
+      text-align: center;
+      font-size: 13px; color: var(--muted);
+    }
+    footer a { color: var(--green-dark); text-decoration: none; font-weight: 500; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      .hero { padding: 48px 20px 40px; }
+      .page-wrap { padding: 40px 20px 64px; }
+      .summary-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 16 16" fill="none">
+          <path d="M3 8.5 6.2 11.5 13 5" stroke="white" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="logo-name">Hover Quick Preview</span>
+    </a>
+    <a href="index.html" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+        <path d="M19 12H5m0 0l7 7m-7-7l7-7" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Back
+    </a>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-badge"><span></span>Legal</div>
+    <h1>Privacy Policy</h1>
+    <p>Hover Quick Preview is built with your privacy as a first principle — we don't collect, store, or share any of your data.</p>
+    <div class="hero-meta">
+      <div class="meta-item"><strong>Effective:</strong> April 13, 2026</div>
+      <div class="meta-item"><strong>Last updated:</strong> April 13, 2026</div>
+      <div class="meta-item"><strong>Extension:</strong> Hover Quick Preview v1.0</div>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+
+    <!-- TL;DR -->
+    <div class="summary-card">
+      <h2>TL;DR — The Short Version</h2>
+      <ul class="summary-list">
+        <li>We collect absolutely no personal data</li>
+        <li>No browsing history is recorded or transmitted</li>
+        <li>No accounts, no sign-up, no tracking</li>
+        <li>All processing happens locally in your browser</li>
+        <li>We never sell or share data with third parties</li>
+      </ul>
+    </div>
+
+    <!-- 1. Overview -->
+    <div class="section">
+      <div class="section-label">01</div>
+      <h2>Overview</h2>
+      <p>Hover Quick Preview does not collect, store, or share any personal user data.</p>
+      <p>The extension operates locally within the user's browser and only accesses product information on supported e-commerce websites to display availability previews (such as sizes and colors).</p>
+      <p>No personal information, browsing history, or sensitive data is collected or transmitted to any external servers.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 2. What we don't collect -->
+    <div class="section">
+      <div class="section-label">02</div>
+      <h2>Data We Do Not Collect</h2>
+      <p>Hover Quick Preview does <strong>not</strong> collect, store, transmit, or share any of the following:</p>
+      <div class="info-card">
+        <div class="info-row">
+          <div class="info-icon">🌐</div>
+          <div class="info-row-content">
+            <h4>Browsing History</h4>
+            <p>We never record which websites you visit, which products you hover over, or any navigation activity.</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">👤</div>
+          <div class="info-row-content">
+            <h4>Personal Information</h4>
+            <p>No names, email addresses, IP addresses, device identifiers, or any other personally identifiable information.</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🛒</div>
+          <div class="info-row-content">
+            <h4>Purchase or Shopping Data</h4>
+            <p>We do not read, store, or transmit your cart contents, order history, payment info, or any shopping activity.</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">📊</div>
+          <div class="info-row-content">
+            <h4>Usage Analytics</h4>
+            <p>No telemetry, crash reports, feature usage tracking, or analytics of any kind are collected or sent.</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🍪</div>
+          <div class="info-row-content">
+            <h4>Cookies or Fingerprinting</h4>
+            <p>We do not set cookies, read third-party cookies, or use any browser fingerprinting techniques.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 3. How it works -->
+    <div class="section">
+      <div class="section-label">03</div>
+      <h2>How the Extension Works</h2>
+      <p>Hover Quick Preview operates entirely on-device. Here is exactly what happens when you use it:</p>
+      <div class="info-card">
+        <div class="info-row">
+          <div class="info-icon">1️⃣</div>
+          <div class="info-row-content">
+            <h4>You hover a product card</h4>
+            <p>The extension's content script detects the hover event on your page — this happens locally in your browser tab.</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">2️⃣</div>
+          <div class="info-row-content">
+            <h4>Variant data is fetched</h4>
+            <p>To show size and color availability, the extension may make a network request directly to the same website you are already visiting (e.g., a Shopify product JSON endpoint). This is a direct browser-to-website request — identical to what that website's own code would do. No data passes through our servers.</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">3️⃣</div>
+          <div class="info-row-content">
+            <h4>A popup is shown locally</h4>
+            <p>The popup is rendered entirely within your browser using a Shadow DOM. It disappears the moment you move your cursor away. Nothing is stored.</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">⚡</div>
+          <div class="info-row-content">
+            <h4>In-memory cache only</h4>
+            <p>Product variant data may be cached in memory for up to 5 minutes to reduce repeat requests. This cache is cleared automatically when you close or reload the tab. It is never written to disk or sent anywhere.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 4. Permissions -->
+    <div class="section">
+      <div class="section-label">04</div>
+      <h2>Permissions Explained</h2>
+      <p>The Extension requests the following Chrome permissions. Here is exactly why each one is needed:</p>
+      <div class="info-card">
+        <div class="info-row">
+          <div class="info-icon">💾</div>
+          <div class="info-row-content">
+            <h4><code>storage</code></h4>
+            <p>Used only to save your enable/disable toggle preference (on or off). One boolean value. Nothing else.</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🌍</div>
+          <div class="info-row-content">
+            <h4><code>host_permissions: &lt;all_urls&gt;</code></h4>
+            <p>Required so the extension can inject the hover listener and fetch product variant data on any shopping website you visit. Without this, the extension would only work on a pre-approved list of domains. We do not use this permission to read, collect, or transmit your browsing activity.</p>
+          </div>
+        </div>
+      </div>
+      <div class="highlight">
+        We request only the minimum permissions necessary for the extension to function. We do not request permissions for tabs, cookies, history, identity, or any other sensitive APIs.
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 5. Third parties -->
+    <div class="section">
+      <div class="section-label">05</div>
+      <h2>Third-Party Services</h2>
+      <p>Hover Quick Preview does <strong>not</strong> integrate with any third-party analytics, advertising, or data services. We do not share any information with third parties because we do not collect any information to share.</p>
+      <p>When the extension fetches product data, it communicates directly with the website you are already visiting — not with any server we operate or control.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 6. Children -->
+    <div class="section">
+      <div class="section-label">06</div>
+      <h2>Children's Privacy</h2>
+      <p>Hover Quick Preview does not collect any personal information from anyone, including children under the age of 13. The extension is a passive browser utility with no accounts, sign-up, or data submission of any kind.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 7. Changes -->
+    <div class="section">
+      <div class="section-label">07</div>
+      <h2>Changes to This Policy</h2>
+      <p>If we ever update this Privacy Policy, we will revise the "Last updated" date at the top of this page. Any future version of the extension that collects data will clearly disclose that change in the Chrome Web Store listing and in this policy before the update ships.</p>
+      <p>Our commitment: <strong>Hover Quick Preview will always be a zero-data-collection extension.</strong> If that ever changes, you will know before installing any update.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 8. Contact -->
+    <div class="section">
+      <div class="section-label">08</div>
+      <h2>Contact</h2>
+      <p>Have a question about this policy or how the extension works? We're happy to help.</p>
+      <div class="contact-card">
+        <h3>Get in touch</h3>
+        <p>Reach out directly and we'll respond as soon as possible.</p>
+        <a href="mailto:dayoungnam@gmail.com" class="contact-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="22,6 12,13 2,6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          dayoungnam@gmail.com
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Hover Quick Preview · <a href="index.html">Home</a> · <a href="privacy-policy.html">Privacy Policy</a></p>
+    <p style="margin-top:6px;">No data collected · No accounts · No tracking</p>
+  </footer>
+
+</body>
+</html>
