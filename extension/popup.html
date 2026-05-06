@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hover Quick Preview</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 280px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 13px;
+      color: #111827;
+      background: #fff;
+      padding-bottom: 8px;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 16px 12px;
+      border-bottom: 1px solid #F3F4F6;
+    }
+    .logo {
+      width: 32px; height: 32px;
+      background: #22C55E;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo svg { width: 18px; height: 18px; }
+    .title-wrap { flex: 1; }
+    .title { font-size: 14px; font-weight: 700; color: #111827; }
+    .version { font-size: 10px; color: #9CA3AF; margin-top: 1px; }
+
+    /* ── Toggle row ── */
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border-bottom: 1px solid #F3F4F6;
+    }
+    .toggle-label { font-weight: 600; font-size: 13px; color: #111827; }
+    .toggle-sub   { font-size: 11px; color: #6B7280; margin-top: 2px; }
+
+    /* ── Toggle switch ── */
+    .switch { position: relative; width: 40px; height: 22px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute; inset: 0;
+      background: #D1D5DB;
+      border-radius: 22px;
+      cursor: pointer;
+      transition: background .2s ease;
+    }
+    .slider::before {
+      content: '';
+      position: absolute;
+      width: 16px; height: 16px;
+      left: 3px; top: 3px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform .2s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,.2);
+    }
+    .switch input:checked + .slider { background: #22C55E; }
+    .switch input:checked + .slider::before { transform: translateX(18px); }
+
+    /* ── How it works ── */
+    .section { padding: 12px 16px; }
+    .section-title {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: #6B7280;
+      margin-bottom: 8px;
+    }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .step:last-child { margin-bottom: 0; }
+    .step-num {
+      width: 18px; height: 18px;
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      color: #16A34A;
+      border-radius: 50%;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-text { font-size: 12px; color: #374151; line-height: 1.5; }
+
+    /* ── Supported sites ── */
+    .sites {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      padding: 0 16px 4px;
+    }
+    .site-tag {
+      background: #F9FAFB;
+      border: 1px solid #E5E7EB;
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 11px;
+      color: #374151;
+      font-weight: 500;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      padding: 10px 16px 4px;
+      border-top: 1px solid #F3F4F6;
+      font-size: 10px;
+      color: #9CA3AF;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">
+      <svg viewBox="0 0 18 18" fill="none">
+        <path d="M4.5 9.5 7.5 12.5 13.5 6" stroke="white" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="title-wrap">
+      <div class="title">Hover Quick Preview</div>
+      <div class="version">v1.0.0 — Instant Size &amp; Color Preview</div>
+    </div>
+  </div>
+
+  <!-- Enable / Disable toggle -->
+  <div class="toggle-row">
+    <div>
+      <div class="toggle-label">Enable QuickStock</div>
+      <div class="toggle-sub">Show popup on product hover</div>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="toggle" checked />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <!-- How it works -->
+  <div class="section">
+    <div class="section-title">How it works</div>
+    <div class="step">
+      <span class="step-num">1</span>
+      <span class="step-text">Hover over any product card on a shopping page</span>
+    </div>
+    <div class="step">
+      <span class="step-num">2</span>
+      <span class="step-text">QuickStock detects the product and fetches variant data</span>
+    </div>
+    <div class="step">
+      <span class="step-num">3</span>
+      <span class="step-text">A small popup shows available <strong>colors</strong> and <strong>sizes</strong> — sold-out options are excluded</span>
+    </div>
+  </div>
+
+  <!-- Supported sites -->
+  <div class="section" style="padding-top:0">
+    <div class="section-title">Works on</div>
+  </div>
+  <div class="sites">
+    <span class="site-tag">Shopify</span>
+    <span class="site-tag">Google Shopping</span>
+    <span class="site-tag">Amazon</span>
+    <span class="site-tag">WooCommerce</span>
+    <span class="site-tag">Etsy</span>
+    <span class="site-tag">eBay</span>
+    <span class="site-tag">+ more</span>
+  </div>
+
+  <div class="footer">Hover popup · No data collected · Open source</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
